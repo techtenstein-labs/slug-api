@@ -1,30 +1,31 @@
-# techtenstein-labs/slug-api
+# Slug Generator API
 
-Unicode-aware URL slug generator API on the Cloudflare edge.
+Convert any string into a clean URL-safe slug. Handles diacritics, unicode, casing, custom separator, stop-word removal, max-length truncation.
 
-- Live: https://slug.techtenstein.com
-- Docs: https://docs.techtenstein.com/slug
-- OpenAPI: https://slug.techtenstein.com/openapi.json
-- Docker: `docker pull sathvickollu/techtenstein-slug`
-- MCP server: `pip install techtenstein-slug-mcp` (coming — queued on PyPI)
-- Apify Actor: https://apify.com/sathvic_kollu/techtenstein-slug (queued for public listing)
-- Gumroad ($2/mo unlimited): https://techtenstein.gumroad.com/l/hiayin
-- Dev.to writeup: https://dev.to/sathvic_kollu/introducing-slug-api-unicode-url-slugs-in-one-call-on-the-cloudflare-edge-pgh
+## Live
 
-## Quick try
+- 🌐 API base: **https://slug.techtenstein.com**
+- 📖 Docs: https://slug.techtenstein.com
+- 📋 OpenAPI 3.1: https://slug.techtenstein.com/openapi.json
+- ❤️ Health: https://slug.techtenstein.com/health
+
+## Quick start
+
 ```bash
-curl 'https://slug.techtenstein.com/?text=Hello%20World'
-# {"slug":"hello-world"}
+curl "https://slug.techtenstein.com/api/slug?text=Hello%20World%202026"
 ```
 
-## Unicode
-```bash
-curl 'https://slug.techtenstein.com/?text=M%C3%BCnchen%20Stra%C3%9Fe'
-# {"slug":"muenchen-strasse"}
-```
+## Endpoints
 
-## Rate limit
-1000 req/day per IP free. $2/mo unlimited on Gumroad.
+- `GET /api/slug` — main endpoint
+- `GET /health` — health check
+- `GET /openapi.json` — OpenAPI 3.1 spec
+- `GET /` — HTML docs
+
+## Auth
+
+None. Free.
 
 ## License
-MIT
+
+MIT © [Techtenstein](https://techtenstein.com)
