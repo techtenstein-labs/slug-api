@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: Slug Generator API
+  version: 1.0.0
+  description: Convert any string into a clean URL-safe slug. Handles diacritics, unicode, casing, custom separator, stop-word removal, max-length truncation.
+  contact:
+    name: Techtenstein
+    email: sathvickollu@gmail.com
+    url: https://techtenstein.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://slug.techtenstein.com
+paths:
+  /api/slug:
+    get:
+      summary: Main endpoint
+      responses:
+        '200':
+          description: OK
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+  /openapi.json:
+    get:
+      summary: OpenAPI 3.1 spec
+      responses:
+        '200':
+          description: OpenAPI spec
